@@ -132,10 +132,10 @@ xhr_world.onload = function () {
         console.log( total_recovered);
         world_num = `
                     <ul class="list-group">
-                        <li class="list-group-item text-left">Total Cases: ${total_cases}</li>
-                        <li class="list-group-item text-left">Total Death: ${total_death}</li>
-                        <li class="list-group-item text-left">Total Recovered: ${ total_recovered}</li>
-                        <li class="list-group-item text-left">Active Cases: ${total_active_cases}</li>
+                        <li class="list-group-item text-left h4 small">Total Cases: ${total_cases}</li>
+                        <li class="list-group-item text-left h4 small">Total Death: ${total_death}</li>
+                        <li class="list-group-item text-left h4 small">Total Recovered: ${ total_recovered}</li>
+                        <li class="list-group-item text-left h4 small">Active Cases: ${total_active_cases}</li>
                       
                     </ul>
                     `

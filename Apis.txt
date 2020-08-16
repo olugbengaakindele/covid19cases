@@ -1,0 +1,17 @@
+
+1- For state and mnumber of state
+    https://localcoviddata.com/covid19/v1/cases/covidTracking?state=CA&daysInPast=7
+
+2- For Zipcode
+    https://localcoviddata.com/covid19/v1/locations?zipCode=13619
+
+3- For countries hisrical data
+    https://localcoviddata.com/covid19/v1/cases/eucdc?country=JP&daysInPast=7
+
+4- For all states in us
+    https://covidtracking.com/api/v1/states/current.json
+
+5- daily usa historical case
+    https://api.covidtracking.com/v1/us/daily.json
+    
+

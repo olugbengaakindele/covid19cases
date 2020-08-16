@@ -9,11 +9,22 @@ const ctyCmb = document.querySelector("#country_select");
 loadEventListeners();
 function loadEventListeners (){
     ctyCmb.addEventListener("change", getCovidFacts);
-
-
-
 }
 
+
+class newRow{
+    constructor(total_cases,total_death,total_recovered,active_cases){
+        this.total_cases = total_cases;
+        this.total_death = total_death;
+        this.total_recovered = total_recovered;
+        this.active_cases = active_cases;
+
+        addRow(){
+            
+        }
+    }
+
+}
 //populate the country combobox 
 // output = '';
 // xhr = new XMLHttpRequest();
@@ -69,15 +80,7 @@ function getCovidFacts(){
         if (xhr.status === 200 ){
             let data = JSON.parse(this.responseText);
             messge_out = `${data.Country_text} has ${data["Active Cases_text"]} cases`;
-            output_msg = `
-                        <ul class="list-group">
-                        <li list-group-item d-flex justify-content-between align-items-center>Last Update : <span class="badge badge-pill"> ${data["Last Update"]}</span></li>
-                        <li list-group-item d-flex justify-content-between align-items-center>Total Cases : <span class="badge badge-warning badge-pill">${data["Total Cases_text"]}<span></li>
-                        <li list-group-item d-flex justify-content-between align-items-center>Total Death :  <span class="badge badge-danger badge-pill">${data["Total Deaths_text"]}</span></li>
-                        <li list-group-item d-flex justify-content-between align-items-center>Total Recovered :  <span class="badge badge-success badge-pill">${data["Total Recovered_text"]}</span></li>
-                        <li list-group-item d-flex justify-content-between align-items-center>Active Cases : <span class="badge badge-warning badge-pill"> ${data["Active Cases_text"]}</span></li>
-                        </ul>
-                        `
+            
             let msg_con = document.querySelector("#message");
             
             msg_con.innerHTML = output_msg
@@ -86,4 +89,16 @@ function getCovidFacts(){
     }
     xhr.send()
 }
-    
+
+
+
+
+// output_msg = `
+//                         <ul class="list-group mt-5">
+//                         <li list-group-item d-flex justify-content-between align-items-center>Last Update : <span class="badge badge-pill"> ${data["Last Update"]}</span></li>
+//                         <li list-group-item d-flex justify-content-between align-items-center>Total Cases : <span class="badge badge-primary badge-pill">${data["Total Cases_text"]}<span></li>
+//                         <li list-group-item d-flex justify-content-between align-items-center>Total Death :  <span class="badge badge-danger badge-pill">${data["Total Deaths_text"]}</span></li>
+//                         <li list-group-item d-flex justify-content-between align-items-center>Total Recovered :  <span class="badge badge-success badge-pill">${data["Total Recovered_text"]}</span></li>
+//                         <li list-group-item d-flex justify-content-between align-items-center>Active Cases : <span class="badge badge-warning badge-pill"> ${data["Active Cases_text"]}</span></li>
+//                         </ul>
+//                         `

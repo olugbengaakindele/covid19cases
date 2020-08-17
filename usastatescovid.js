@@ -8,11 +8,12 @@
 //https://api.covidtracking.com/v1/us/daily.json
 
 const sts_cmb = document.querySelector("#state_select");
-
+const body = document.querySelector('body');
 loadEventListeners();
 
 function loadEventListeners(){
-
+    sts_cmb.addEventListener("change", getStateFact);
+    //body.addEventListener("load", loadCMB)
 }
 
 // xhr = new XMLHttpRequest();
@@ -27,11 +28,28 @@ function loadEventListeners(){
 
 
 //load states into combox;
+
 let all_states = []
 states.forEach(function(st){
    all_states += `<option>${st.name}</option>`;
+  
 }
 )
 sts_cmb.innerHTML = all_states;
 
 
+
+function getStateFact(){
+    let state_select = sts_cmb.value;
+
+
+    states.forEach(function(st){
+        if (st.name == state_select ){
+            st_cd = st.abbreviation;
+            //get the state code to pass into api string
+            console.log(st_cd);
+        
+        }
+    }
+    )
+}
